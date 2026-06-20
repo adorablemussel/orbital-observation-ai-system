@@ -1,7 +1,10 @@
 .venv-wsl/
 .venv-win/
+.venv/
 
-*/data
+eurosat/
+images/
+masks/
 
 __pycache__/
 *.pyc
