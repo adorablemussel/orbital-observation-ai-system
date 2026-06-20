@@ -15,23 +15,38 @@ This project is a comprehensive Artificial Intelligence and Data Engineering pip
 
 The project is divided into three distinct but technologically cohesive modules:
 
-### Module 1: Telemetry Analysis & Anomaly Detection (`src/ingestion`, `src/preprocessing`, `src/models`)
+### Module 1: Telemetry Analysis & Anomaly Detection 
 Processes simulated tabular telemetry data from orbital sensors (e.g., temperature, velocity, altitude) to predict and detect anomalies.
-* **Data Ingestion & Validation:** Automated raw data validation against JSON metadata.
-* **Feature Engineering:** Min-Max normalization and generation of derived features (e.g., temperature-velocity interactions).
-* **Machine Learning Playground:** Training, evaluation, and comparison of classical ML models (Decision Trees, Logistic Regression, Random Forests) using precision, recall, and F1-scores.
+* **Feature Engineering:** Min-Max normalization and generation of derived features.
+* **Machine Learning Playground:** Training, evaluation, and comparison of classical ML models (Decision Trees, Logistic Regression, Random Forests).
 
-### Module 2: Satellite Image Classification & XAI (`src/vision`)
-An advanced computer vision pipeline for land-cover classification using the EuroSAT dataset (Forest, River, Residential, Highway).
-* **Deep Learning Models:** Custom Convolutional Neural Networks (CNNs) built from scratch.
+<p align="center">
+  <img src="reports/model_comparison_panel.png" width="800" alt="ML Models Comparison Panel">
+  <br>
+  <em>Comparison of Accuracy, Precision, Recall, and F1-Score across different classical ML models.</em>
+</p>
+
+### Module 2: Satellite Image Classification & XAI
+An advanced computer vision pipeline for land-cover classification using the EuroSAT dataset.
 * **Transfer Learning:** Fine-tuning a pre-trained **ResNet18** model for satellite imagery.
-* **Explainable AI (XAI):** Implementation of **Grad-CAM**, HiResCAM, LayerCAM, and **Occlusion Sensitivity Analysis** to visually interpret and validate the neural network's decision-making processes.
+* **Explainable AI (XAI):** Implementation of **Grad-CAM**, HiResCAM, LayerCAM, and **Occlusion Sensitivity Analysis** to visually interpret the neural network's decision-making processes.
 
-### Module 3: Semantic Segmentation for Earth Observation (`src/segmentation`)
+<p align="center">
+  <img src="reports/gradcam_examples/cam_methods_comparison.png" width="800" alt="XAI CAM Methods Comparison">
+  <br>
+  <em>Visualizing model attention using various Explainable AI (XAI) methods (Grad-CAM, HiResCAM, LayerCAM, EigenCAM) on a classified satellite image.</em>
+</p>
+
+### Module 3: Semantic Segmentation for Earth Observation
 Moves beyond image-level classification to pixel-level prediction using a custom **U-Net** architecture.
 * **Synthetic EO Dataset Generator:** Automatically creates synthetic satellite scenes and corresponding pixel-perfect ground-truth masks.
-* **Semantic Segmentation:** Trains a U-Net model to classify every pixel into categories like background, vegetation, water, and urban structures.
-* **Evaluation:** Measures pixel accuracy and generates side-by-side visual comparisons of input images, ground-truth masks, and model predictions.
+* **Semantic Segmentation:** Trains a U-Net model to classify every pixel (Background, Vegetation, Water, Urban).
+
+<p align="center">
+  <img src="reports/segmentation_examples/prediction.png" width="800" alt="Semantic Segmentation Results">
+  <br>
+  <em>U-Net in action: (Left) Input satellite image, (Center) Ground-truth mask, (Right) Model's predicted semantic mask.</em>
+</p>
 
 ---
 
